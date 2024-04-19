@@ -21,6 +21,12 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+bootJar {
+	archiveBaseName = 'kube_test'
+	archiveFileName = 'kube_test.jar'
+	archiveVersion = "0.0.0"
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
