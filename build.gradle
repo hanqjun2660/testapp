@@ -26,6 +26,9 @@ bootJar {
 	archiveFileName = 'kube_test.jar'
 	archiveVersion = "0.0.0"
 }
+springBoot {
+	mainClass = 'com.example.kube_test.KubeTestApplication'
+}
 
 tasks.named('test') {
 	useJUnitPlatform()
