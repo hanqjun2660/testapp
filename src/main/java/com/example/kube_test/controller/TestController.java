@@ -8,6 +8,7 @@ public class TestController {
 
     @GetMapping("/test")
     public String test() {
+        System.out.println("요청이 들어왔습니다.");
         return "connect success!!!!!";
     }
 }
