@@ -26,6 +26,7 @@ public class Securityconfig {
                         corsConfiguration.setAllowedOrigins(Collections.singletonList("*"));
                         corsConfiguration.setAllowedMethods(Collections.singletonList("*"));
                         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
+                        corsConfiguration.setAllowCredentials(true);
 
                         corsConfiguration.setExposedHeaders(Collections.singletonList("*"));
 
