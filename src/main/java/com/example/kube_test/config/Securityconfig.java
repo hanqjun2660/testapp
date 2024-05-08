@@ -34,6 +34,9 @@ public class Securityconfig {
                     }
                 }));
 
+        http
+                .csrf((auth) -> auth.disable());
+
         return http.build();
     }
 }
