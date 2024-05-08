@@ -39,6 +39,7 @@ public class SecurityConfig {
         corsConfiguration.setAllowedMethods(Collections.singletonList("*"));
         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
         corsConfiguration.setMaxAge(3600L);
+        corsConfiguration.setExposedHeaders(Collections.singletonList("*"));
         corsConfiguration.addAllowedMethod("GET"); // 추가
         corsConfiguration.addAllowedHeader("Content-Type"); // 추가
 
