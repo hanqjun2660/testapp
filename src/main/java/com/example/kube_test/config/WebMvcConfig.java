@@ -15,7 +15,9 @@ public class WebMvcConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:3000")
-                        .allowedOrigins("https://front.devsj.site");
+                        .allowedOrigins("https://front.devsj.site")
+                        .allowedMethods("GET")
+                        .allowCredentials(true);
             }
         };
     }
