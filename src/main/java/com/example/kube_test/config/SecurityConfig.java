@@ -35,11 +35,12 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-        corsConfiguration.setAllowedOrigins(Collections.singletonList("https://front.devsj.site"));
-        corsConfiguration.setAllowedMethods(Collections.singletonList("*"));
-        corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
-        corsConfiguration.setMaxAge(3600L);
-        corsConfiguration.setExposedHeaders(Collections.singletonList("*"));
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.addAllowedHeader("*");
+        corsConfiguration.addAllowedMethod("*");
+        
+        /*corsConfiguration.setMaxAge(3600L);
+        corsConfiguration.setExposedHeaders(Collections.singletonList("*"));*/
         corsConfiguration.addAllowedMethod("GET"); // 추가
         corsConfiguration.addAllowedHeader("Content-Type"); // 추가
 
