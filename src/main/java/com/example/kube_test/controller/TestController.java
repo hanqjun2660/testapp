@@ -1,5 +1,6 @@
 package com.example.kube_test.controller;
 
+import com.example.kube_test.model.Response;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("/test")
-    public String test() {
+    public Response test() {
         System.out.println("요청이 들어왔습니다.");
-        return "connect success!!!!!";
+        return new Response("connect success!!");
     }
 }
