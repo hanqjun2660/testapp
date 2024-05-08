@@ -27,12 +27,12 @@ public class Securityconfig {
                         corsConfiguration.setAllowedMethods(Collections.singletonList("*"));
                         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
 
-                        corsConfiguration.setExposedHeaders(Collections.singletonList("Access-Control-Allow-Origin"));
+                        corsConfiguration.setExposedHeaders(Collections.singletonList("*"));
 
                         return corsConfiguration;
                     }
                 }));
-        
+
         return http.build();
     }
 }
