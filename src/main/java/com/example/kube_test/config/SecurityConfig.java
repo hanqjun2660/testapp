@@ -33,22 +33,14 @@ public class SecurityConfig {
 
     @Bean // 추가
     public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-
-        corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedHeader("*");
-        corsConfiguration.addAllowedMethod("*");
-        
-        /*corsConfiguration.setMaxAge(3600L);
-        corsConfiguration.setExposedHeaders(Collections.singletonList("*"));*/
-        corsConfiguration.addAllowedMethod("GET"); // 추가
-        corsConfiguration.addAllowedHeader("Content-Type"); // 추가
-
-        corsConfiguration.setExposedHeaders(Collections.singletonList("*"));
-
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("*");
+        configuration.addAllowedMethod("*");
+        configuration.addAllowedHeader("*");
+        configuration.setAllowCredentials(true);
+        configuration.setMaxAge(3600L);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfiguration);
-
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
 }
