@@ -23,10 +23,10 @@ public class Securityconfig {
                     public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-                        corsConfiguration.setAllowedOrigins(Collections.singletonList("*"));
+                        corsConfiguration.setAllowedOriginPatterns(Collections.singletonList("*"));
                         corsConfiguration.setAllowedMethods(Collections.singletonList("*"));
                         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
-                        corsConfiguration.setAllowCredentials(true);
+                        corsConfiguration.setMaxAge(3600L);
 
                         corsConfiguration.setExposedHeaders(Collections.singletonList("*"));
 
@@ -36,6 +36,11 @@ public class Securityconfig {
 
         http
                 .csrf((auth) -> auth.disable());
+
+        http
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/**").permitAll()
+                        .anyRequest().authenticated());
 
         return http.build();
     }
