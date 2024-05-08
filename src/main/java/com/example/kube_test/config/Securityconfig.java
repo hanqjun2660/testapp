@@ -23,7 +23,7 @@ public class Securityconfig {
                     public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-                        corsConfiguration.setAllowedOriginPatterns(Collections.singletonList("*"));
+                        corsConfiguration.setAllowedOriginPatterns(Collections.singletonList("https://front.devsj.site"));
                         corsConfiguration.setAllowedMethods(Collections.singletonList("*"));
                         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
                         corsConfiguration.setMaxAge(3600L);
